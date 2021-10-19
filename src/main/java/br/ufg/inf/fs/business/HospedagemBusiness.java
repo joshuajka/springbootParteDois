@@ -43,14 +43,13 @@ public class HospedagemBusiness {
 	}
     
     private void validaHospedagem(Hospedagem hospedagem) throws HospedagemException {
-		if(hospedagem.getIdHospedagem() == null) {
-			throw new HospedagemException("0109");
-		}
-		if(hospedagem.getIdHospede()==null) {
-			throw new HospedagemException("0108");
-		}
-		if(hospedagem.getIdQuarto()==null) {
-			throw new HospedagemException("0110");
-		}
+    	if(hospedagem.getDtCheckin() == null) {
+            throw new HospedagemException("0309");
+        }
+        if(hospedagem.getDtCheckout() == null) {
+            throw new HospedagemException("0310");
+        }
 	}
+    
+    
 }

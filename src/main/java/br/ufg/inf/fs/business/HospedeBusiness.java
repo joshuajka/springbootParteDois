@@ -45,14 +45,14 @@ public class HospedeBusiness {
 	}
     
     private void validaHospede(Hospede hospede) throws HospedeException {
-		if(hospede.getIdHospede() == null) {
-			throw new HospedeException("0109");
-		}
-		if(hospede.getNmHospede()==null || hospede.getNmHospede().length()==0) {
-			throw new HospedeException("0108");
-		}
-		if(hospede.getCpf()==null) {
-			throw new HospedeException("0110");
-		}
+    	if(hospede.getNmHospede() == null || hospede.getNmHospede().length() == 0) {
+            throw new HospedeException("0208");
+        }
+        if(hospede.getCpf() == null) {
+            throw new HospedeException("0209");
+        }
+        if(hospede.getDtNascimento() == null) {
+            throw new HospedeException("0210");
+        }
 	}
 }
