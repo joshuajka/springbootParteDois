@@ -30,16 +30,16 @@ public class Hospedagem implements Serializable {
     private Integer idHospede;
 
     @Column(name = "dt_checkin")
-    private Date dtCheckin;
+    private String dtCheckin;
 
     @Column(name = "dt_checkout")
-    private Date dtCheckout;
+    private String dtCheckout;
 
     public Hospedagem() {
         super();
     }
 
-    public Hospedagem(Integer idHospedagem, Integer idQuarto, Integer idHospede, Date dtCheckin, Date dtCheckout) {
+    public Hospedagem(Integer idHospedagem, Integer idQuarto, Integer idHospede, String dtCheckin, String dtCheckout) {
         this.idHospedagem = idHospedagem;
         this.idQuarto = idQuarto;
         this.idHospede = idHospede;
@@ -71,19 +71,19 @@ public class Hospedagem implements Serializable {
         this.idHospede = idHospede;
     }
 
-    public Date getDtCheckin() {
+    public String getDtCheckin() {
         return dtCheckin;
     }
 
-    public void setDtCheckin(Date dtCheckin) {
+    public void setDtCheckin(String dtCheckin) {
         this.dtCheckin = dtCheckin;
     }
 
-    public Date getDtCheckout() {
+    public String getDtCheckout() {
         return dtCheckout;
     }
 
-    public void setDtCheckout(Date dtCheckout) {
+    public void setDtCheckout(String dtCheckout) {
         this.dtCheckout = dtCheckout;
     }
 

@@ -1,20 +1,12 @@
 package br.ufg.inf.fs.entities;
 
 import java.util.Date;
-import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "tb_hospede")
-public class Hospede implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class Hospede {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +16,8 @@ public class Hospede implements Serializable {
     @Column(name = "nm_hospede")
     private String nmHospede;
 
-    @Column(name = "dt_nascimento")
-    private Date dtNascimento;
+    @Column(name = "dt_nasimento")
+    private String dtNascimento;
 
     @Column(name = "cpf")
     private Integer cpf;
@@ -34,11 +26,11 @@ public class Hospede implements Serializable {
         super();
     }
 
-    public Hospede(Integer idHospede, String nmHospede, Date dtNascimento, Integer cpf) {
+    public Hospede(Integer idHospede, String nmHospede, String checkin, Integer cpf) {
         super();
         this.idHospede = idHospede;
         this.nmHospede = nmHospede;
-        this.dtNascimento = dtNascimento;
+        this.dtNascimento = checkin;
         this.cpf = cpf;
     }
 
@@ -58,11 +50,11 @@ public class Hospede implements Serializable {
         this.nmHospede = nmHospede;
     }
 
-    public Date getDtNascimento() {
+    public String getDtNascimento() {
         return dtNascimento;
     }
 
-    public void setDtNascimento(Date dtNascimento) {
+    public void setDtNascimento(String dtNascimento) {
         this.dtNascimento = dtNascimento;
     }
 
@@ -76,8 +68,12 @@ public class Hospede implements Serializable {
 
     @Override
     public String toString() {
-        return "Hospede [cpf=" + cpf + ", dtNascimento=" + dtNascimento + ", idHospede=" + idHospede + ", nmHospede="
-                + nmHospede + "]";
+        return "Hospede{" +
+                "idHospede=" + idHospede +
+                ", nmHospede='" + nmHospede + '\'' +
+                ", dtNascimento=" + dtNascimento +
+                ", cpf=" + cpf +
+                '}';
     }
-
+    
 }
